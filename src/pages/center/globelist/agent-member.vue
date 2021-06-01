@@ -1,0 +1,157 @@
+<template>
+	<view class="content">
+		<view class="form-items">
+			<view class="uni-flex uni-row uni-form-item-date">
+				<view style="width: 200rpx;" class="uni-form-item__label">
+					<text>开始日期</text>
+				</view>
+				<view style="-webkit-flex: 1;flex: 1;"></view>
+				<uni-datetime-picker style="width: fit-content;" v-model='startime'></uni-datetime-picker>
+			</view>
+			<view class="uni-flex uni-row uni-form-item-date">
+				<view style="width: 200rpx;" class="uni-form-item__label">
+					<text>结束日期</text>
+				</view>
+				<view style="-webkit-flex: 1;flex: 1;"></view>
+				<uni-datetime-picker style="width: fit-content;" v-model='endtime'></uni-datetime-picker>
+			</view>
+			<view class="uni-flex uni-row uni-form-item-date">
+				<view style="width: 200rpx;" class="uni-form-item__label">
+					<text>用户名</text>
+				</view>
+				<view style="-webkit-flex: 1;flex: 1;"></view>
+				<input class="uni-form-item__input" type="text" placeholder="请输入用户名" v-model="formData.loginname" />
+			</view>
+			<!-- <view class="uni-flex uni-row uni-form-item-date">
+				<view style="width: 200rpx;" class="uni-form-item__label">
+					<text>是否在线</text>
+				</view>
+				<view style="-webkit-flex: 1;flex: 1;"></view>
+				<switch checked='formData.isonline == 1' @change="isOnline" color="#697AFF" style="transform:scale(0.7)"/>
+			</view> -->
+		</view>
+		<view style="margin-top: 20rpx;padding: 0 20rpx;">
+			<button type="primary" @click="getMemberList()">获取下线会员</button>
+		</view>
+		<view style="padding: 20rpx;" v-if="null != memberData.root && memberData.root.length > 0">
+			<scroll-view class="member-list" :scroll-y="true">
+				<view v-for="(item, index) in memberData.root" :key='index' class="panel-info">
+					<uni-row>
+						<uni-col :span="12">
+							<text class="panel-info-label">用户名:</text>
+							<text class="panel-info-value">{{item.username}}</text>
+						</uni-col>
+						<uni-col :span="12">
+							<text class="panel-info-label">余额:</text>
+							<text class="panel-info-value">{{item.balance}}</text>
+						</uni-col>
+					</uni-row>
+					<uni-row>
+						<uni-col :span="18">
+							<text class="panel-info-label">注册时间:</text>
+							<text class="panel-info-value">{{item.regtime}}</text>
+						</uni-col>
+						<uni-col :span="6">
+							<uni-tag :type="item.isonline==1?'success':'warning'" :text="item.isonline==0?'离线':'在线'" size="small" :inverted="true"/>
+						</uni-col>
+					</uni-row>
+				</view>
+			</scroll-view>
+			<uni-pagination :current="formData.p" :total="memberData.total*10" :pageSize='10' title="标题文字" :show-icon="true" @change="change" />
+		</view>
+		<view style="padding: 20rpx;" v-if="null == memberData.root || memberData.root.length <= 0">
+			下线列表为空!
+		</view>
+	</view>
+</template>
+
+<script>
+	import api from '@/api/api.js'
+	import {
+		friendlyDate
+	} from '@/components/uni-dateformat/date-format.js'
+	import {mapState, mapGetters, mapActions} from 'vuex'
+	export default {
+	    components:{
+	    },
+	    computed: {
+	    	...mapGetters(['user', 'remUser']),
+	    },
+		data() {
+			return {
+				startime: friendlyDate(new Date().getTime() - 60*60*1000*24, {
+					locale: 'en',
+					threshold: [0, 0],
+					format: 'yyyy/MM/dd hh:mm:ss'
+				}),
+				endtime: friendlyDate(new Date(), {
+					locale: 'en',
+					threshold: [0, 0],
+					format: 'yyyy/MM/dd hh:mm:ss'
+				}),
+				formData:{
+					username: '',
+					loginname:'',
+					p: 1,
+					pagesize: 10,
+					startime: '',
+					endtime: ''
+				},
+				memberData:{
+					data:{
+						total:0,
+						root:[]
+					}
+				}
+			};
+		},
+		watch: {
+			startime: {
+				handler(newVal) {
+					this.formData.startime = newVal;
+				},
+				immediate: true
+			},
+			endtime: {
+				handler(newVal) {
+					this.formData.endtime = newVal;
+				},
+				immediate: true
+			},
+		},
+	    onShow() {
+	    },
+	    methods:{
+			getMemberList(){
+				this.memberData = {
+					data:{
+						total:0,
+						root:[]
+					}
+				};
+				this.formData.username = this.user.username;
+				api.getMemberList(this.formData).then(res=>{
+					if(res.code == 0){
+						this.memberData = res.data;
+					}else{
+						uni.showToast({
+							title:res.message,
+							icon:'none'
+						})
+					}
+				})
+			},
+			change(e) {
+				this.formData.p = e.current;
+				this.getMemberList();
+			}
+	    }
+	}
+</script>
+
+<style lang="scss">
+	.member-list{
+		padding: 20rpx 0;
+		height: calc(100vh - 810rpx);
+	}
+</style>

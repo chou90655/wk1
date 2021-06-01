@@ -1,0 +1,406 @@
+{
+	"pages": [
+		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		    "path" : "pages/public/login",
+		    "style" :
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+		    }
+
+		},
+		{
+            "path" : "pages/home/index",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+            }
+
+        },
+		{
+		    "path" : "pages/bet/index",
+		    "style" :
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+		    }
+
+		},
+		{
+		    "path" : "pages/index/index",
+		    "style" :
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+		    }
+
+		},
+		{
+		    "path" : "pages/me/index",
+		    "style" :
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+		    }
+
+		},
+		{
+		    "path" : "pages/activity/index",
+		    "style" :
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+		    }
+
+		}
+        ,{
+            "path" : "pages/public/getPassword",
+            "style" :
+            {
+                "navigationBarTitleText": "找回密码",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/public/register",
+            "style" :
+            {
+                "navigationBarTitleText": "注册账号",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"default"
+            }
+
+        }
+        ,{
+            "path" : "pages/public/setPassword",
+            "style" :
+            {
+                "navigationBarTitleText": "设置新密码",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/blance/chongzhi",
+            "style" :
+            {
+                "navigationBarTitleText": "充值",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/blance/tixian",
+            "style" :
+            {
+                "navigationBarTitleText": "提现",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/blance/zhuanzhang",
+            "style" :
+            {
+                "navigationBarTitleText": "划转",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/set/set",
+            "style" :
+            {
+                "navigationBarTitleText": "设置中心",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/master/master",
+            "style" :
+            {
+                "navigationBarTitleText": "联系客服",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/games/games",
+            "style" :
+            {
+                "navigationBarTitleText": "彩种大厅",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/games/bet",
+            "style" :
+            {
+                "navigationBarTitleText": "游戏投注",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/blance/chongzhiDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/newslist/newslist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "公告列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/newslist/newsdetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "公告详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/user",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/globe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "代理中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/calendar",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "报表中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/webview/webview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/graph",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "余额宝中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/graph/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "余额宝列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/graph/graph",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "余额宝转取",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/activity/list/vip",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "每日加奖",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/activity/list/fanshui",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "晋级奖励",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/record/dealRecord",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "交易记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/record/depositRecord",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/record/withdrawalRecord",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提现记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/bind/bindPhone",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "绑定手机",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/bind/bindName",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "绑定真实姓名",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/bind/bindQQ",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "绑定QQ",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/bind/bindEmail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "绑定邮箱",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/center/report",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "报表中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/bind/password",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/bind/cards",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "银行卡管理",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"pageOrientation": "portrait",
+		"navigationBarTitleText": "七星娱乐",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#697AFF",
+		"backgroundColor": "#F8F8F8",
+		"backgroundColorTop": "#F4F5F6",
+		"backgroundColorBottom": "#F4F5F6",
+		"mp-360": {
+			"navigationStyle": "custom"
+		},
+		"h5": {
+			"maxWidth": 1190,
+			"navigationBarTextStyle": "white",
+			"navigationBarBackgroundColor": "#697AFF"
+		}
+
+	},
+	"tabBar": {
+		"color": "#8A8989",
+		"selectedColor": "#90AAFF",
+		"borderStyle": "white",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/home/index",
+				"iconPath": "static/tabBar/home.png",
+				"selectedIconPath": "static/tabBar/homeHL.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/bet/index",
+				"iconPath": "static/tabBar/bet.png",
+				"selectedIconPath": "static/tabBar/betHL.png",
+				"text": "投注记录"
+			}, {
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabBar/index.png",
+				"selectedIconPath": "static/tabBar/indexHL.png",
+				"text": "购彩大厅"
+			}, {
+				"pagePath": "pages/activity/index",
+				"iconPath": "static/tabBar/actitvity.png",
+				"selectedIconPath": "static/tabBar/actitvityHL.png",
+				"text": "优惠活动"
+			}, {
+				"pagePath": "pages/me/index",
+				"iconPath": "static/tabBar/me.png",
+				"selectedIconPath": "static/tabBar/meHL.png",
+				"text": "我的"
+			}
+		]
+	}
+}
