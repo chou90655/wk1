@@ -1,31 +1,39 @@
 <template>
-	<view>
-    <iframe src="" class="iframe" frameborder="0"></iframe>
-	</view>
+  <view class="lottery">
+    <iframe v-if="game.code" :src="url" class="iframe" frameborder="0"></iframe>
+  </view>
 </template>
 
 <script>
-	import api from '@/api/api.js'
-	import graceChecker from '../../common/graceChecker.js'
-	import {mapState, mapGetters, mapActions} from 'vuex'
-	export default {
-		computed: {
-			...mapGetters(['user', 'remUser']),
-		},
-		data() {
-			return {
-			}
-		},
-    computed: {
-      ...mapState(['token'])
+import { mapGetters } from "vuex";
+import configService from "../../common/service/config.service";
+export default {
+  computed: {
+    ...mapGetters(["user", "remUser"]),
+    url() {
+      const { token, username} = this.user
+      const { code, fcode} = this.game
+      return `${configService.lotteryUrl}#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
     },
-		methods: {
-      
-    }
-	}
+  },
+  data() {
+    return {
+      game: {}
+    };
+  },
+  onLoad(option) {
+    this.game = option
+  },
+  methods: {},
+};
 </script>
 
 <style lang="scss">
+.lottery {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 .iframe {
   width: 100%;
   height: 100%;
