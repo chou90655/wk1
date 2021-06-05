@@ -11,20 +11,35 @@ export default {
   computed: {
     ...mapGetters(["user", "remUser"]),
     url() {
-      const { token, username} = this.user
-      const { code, fcode} = this.game
-      return `${configService.lotteryUrl}#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
+      const { token, username } = this.user;
+      const { code, fcode } = this.game;
+      return `http://172.20.30.34:8080/#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
+      // return `${configService.lotteryUrl}#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
     },
+  },
+  created() {
+    window.addEventListener("message", this.receiveMessage, false);
   },
   data() {
     return {
-      game: {}
+      game: {},
     };
   },
-  onLoad(option) {
-    this.game = option
+  beforeDestroy() {
+    window.removeEventListener("message", this.receiveMessage)
   },
-  methods: {},
+  onLoad(option) {
+    this.game = option;
+  },
+  methods: {
+    receiveMessage(event) {
+      if (event.data==='back') {
+        console.log(event.data);
+        uni.navigateBack()
+        uni.navigateBack()
+      }
+    },
+  },
 };
 </script>
 
