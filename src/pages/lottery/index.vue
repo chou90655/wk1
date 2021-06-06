@@ -33,9 +33,9 @@ export default {
   methods: {
     receiveMessage(event) {
       if (event.data==='back') {
-        console.log(event.data);
-        uni.navigateBack()
-        uni.navigateBack()
+        uni.switchTab({
+          url: "/pages/home/index",
+        });
       }
     },
   },
