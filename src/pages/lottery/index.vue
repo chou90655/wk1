@@ -32,9 +32,18 @@ export default {
   },
   methods: {
     receiveMessage(event) {
+      console.log(event.data);
       if (event.data==='back') {
         uni.switchTab({
           url: "/pages/home/index",
+        });
+      } else if (event.data==='list') {
+        uni.switchTab({
+          url: "/pages/bet/index",
+        });
+      } else if (event.data==='login') {
+        uni.navigateTo({
+          url: "/",
         });
       }
     },
