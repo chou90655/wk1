@@ -13,7 +13,8 @@ export default {
     url() {
       const { token, username } = this.user;
       const { code, fcode } = this.game;
-      return `${configService.lotteryUrl}#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
+      // return `${configService.lotteryUrl}#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
+      return `http://172.20.30.34:8080/#/?token=${token}&username=${username}&code=${code}&fcode=${fcode}`;
     },
   },
   created() {
